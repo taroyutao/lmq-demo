@@ -63,7 +63,8 @@ public class MQ4IoTSendMessageToMQ4IoTUseTokenMode {
          *  此处作为示意，在 MQ4IoT 客户端本地申请 token， 实际使用时禁止在 MQTT 客户端程序申请 Token，以免引起 AccessKey，SecretKey 泄露，失去 token 的意义。
          */
         List<String> resource = new ArrayList<String>();
-        resource.add(mq4IotTopic);
+        
+        resource.add( parentTopic + "/#");
         /**
          * 此处示意，申请一个小时有效期的 token,实际使用时禁止在 MQTT 客户端程序申请 Token，以免引起 AccessKey，SecretKey 泄露，失去 token 的意义。
          */
